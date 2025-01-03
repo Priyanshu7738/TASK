@@ -42,14 +42,14 @@
                             required
                         />
                     </div>
-                    <div class="container mt-5">
                     <div class="mb-3">
                     <label for="desc" class="form-label">Description</label>
                     <textarea class="form-control" name="desc" id="desc" placeholder="Enter description" maxlength="500" rows="3" required></textarea>
-                    <small class="form-text text-muted">Maximum length: 500 characters.</small>
+                    <small class="form-text text-muted">Maximum length: 500 characters.</small><br>
+                         <button type="submit" class="btn btn-primary mt-3">Create Task</button> 
                 </div>
                         <br>
-                         <button type="submit" class="btn btn-primary mt-3">Create Task</button>   
+                          
                 
                     </div>
                     

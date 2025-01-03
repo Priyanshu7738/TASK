@@ -26,52 +26,33 @@
         </header>
         <main>
             <br>
-            <h1 class="text-center border border-dark">View Task</h1>
-            <!-- <div class="container mt-5">
-                <div class="row align-items-center g-2">
-                    <div class="col-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title"><?php echo"{$rows['title']}" ?></h4><hr>
-                                <p class="card-text"><?php echo"{$rows['description']}" ?></p><hr>
-                                <a href="" class="btn border-danger text-dark bg-danger bg-gradient"><?php echo"{$rows['status']}" ?></a><hr>
-                                <a href="edit.php?id={$rows['id']}" class="btn btn-primary">Edit</a>
-                                <a href="delete.php?id={$rows['id']}" class="btn btn-danger">Delete</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-           
+            <h1 class="text-center border border-dark">View Task</h1>           
 <?php
             
     include "connection.php";
 
     $sql="SELECT * FROM `tasks` ORDER BY `id` DESC";
     $result=mysqli_query($conn, $sql);
-    // Check if tasks are available
 if (mysqli_num_rows($result)>0) {
     
-    // Start the HTML structure
     echo '<div class="container mt-5">';
     echo '<div class="row align-items-center g-2">';
     while($rows=mysqli_fetch_assoc($result)) {
         $status = strtolower($rows['status']);
         switch ($status) {
             case 'pending':
-                $btnClass = 'btn-secondary'; // gray
+                $btnClass = 'btn-secondary';
                 break;
             case 'in progress':
-                $btnClass = 'btn-warning'; // yellow
+                $btnClass = 'btn-warning';
                 break;
             case 'completed':
-                $btnClass = 'btn-success'; // green
+                $btnClass = 'btn-success'; 
                 break;
             default:
-                $btnClass = 'btn-secondary'; // fallback
+                $btnClass = 'btn-secondary';
         }
         
-    // Loop through each task and create a card for each
     echo '<div class="col-4">';
     echo '    <div class="card">';
     echo '        <div class="card-body">';
@@ -91,14 +72,12 @@ if (mysqli_num_rows($result)>0) {
     echo '</div>';
     }
     
-    // Close the row and container div
     echo '</div>';
     echo '</div>';
 } else {
     echo '<p>No tasks found.</p>';
 }
 
-// Close the database connection
 $conn->close();
 ?>
 <script>

@@ -42,18 +42,12 @@
                             required
                         />
                     </div>
-                    <div class="mb-4">
-                        <label for="" class="form-label">Description</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="desc"
-                            id=""
-                            aria-describedby="helpId"
-                            placeholder="Description"
-                            maxlength="500"
-                            required
-                        />
+                    <div class="container mt-5">
+                    <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" name="desc" id="desc" placeholder="Enter description" maxlength="500" rows="3" required></textarea>
+                    <small class="form-text text-muted">Maximum length: 500 characters.</small>
+                </div>
                         <br>
                          <button type="submit" class="btn btn-primary mt-3">Create Task</button>   
                 
